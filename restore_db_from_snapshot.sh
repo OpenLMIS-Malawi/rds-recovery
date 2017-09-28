@@ -90,3 +90,9 @@ wait_available() {
 }
 
 restore_db_from_snapshot
+
+if [ -f "/external/after_restore.sh" ]; then
+    sh /external/after_restore.sh
+else
+    echo "/external/after_restore.sh not found"
+fi
