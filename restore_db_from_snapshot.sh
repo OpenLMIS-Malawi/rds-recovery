@@ -56,7 +56,7 @@ restore_db_from_snapshot() {
 		--db-instance-identifier $SNAPSHOT_INSTANCE \
 		--new-db-instance-identifier $TARGET_INSTANCE \
 		--master-user-password $MASTER_USER_PASSWORD \
-		--db-security-groups $SECURITY_GROUP \
+		--vpc-security-group-ids $SECURITY_GROUP \
 		--apply-immediately
 
 	wait_available $TARGET_INSTANCE
