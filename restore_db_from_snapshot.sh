@@ -6,6 +6,7 @@
 : ${SOURCE_INSTANCE:?"Need to set SOURCE_INSTANCE"}
 : ${TARGET_INSTANCE:?"Need to set TARGET_INSTANCE"}
 : ${MASTER_USER_PASSWORD:?"Need to set MASTER_USER_PASSWORD"}
+: ${SECURITY_GROUP:?"Need to set SECURITY_GROUP"}
 
 restore_db_from_snapshot() {
 	SNAPSHOT_INSTANCE=$SOURCE_INSTANCE"-snapshot"
@@ -55,6 +56,7 @@ restore_db_from_snapshot() {
 		--db-instance-identifier $SNAPSHOT_INSTANCE \
 		--new-db-instance-identifier $TARGET_INSTANCE \
 		--master-user-password $MASTER_USER_PASSWORD \
+		--db-security-groups $SECURITY_GROUP \
 		--apply-immediately
 
 	wait_available $TARGET_INSTANCE
