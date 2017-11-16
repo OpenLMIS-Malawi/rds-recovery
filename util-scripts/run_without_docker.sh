@@ -7,6 +7,9 @@ export AWS_SECRET_ACCESS_KEY=
 # AWS region
 export REGION=us-east-1
 
+# AWS region of the source instance. Defaults to $REGION.
+export SOURCE_REGION=us-east-1
+
 # RDS instance that the snapshot was taken on
 export SOURCE_INSTANCE=source-db
 
@@ -15,5 +18,8 @@ export TARGET_INSTANCE=target-db
 
 # New master user password
 export MASTER_USER_PASSWORD=some-password
+
+# VPC security group id
+export SECURITY_GROUP=
 
 ./restore_db_from_snapshot.sh
