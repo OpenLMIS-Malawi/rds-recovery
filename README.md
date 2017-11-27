@@ -1,9 +1,6 @@
 # rds-restore
 A script that restores the target RDS instance from the latest snapshot of source instance.
 
-## Pre-requisites
-* Both source and target RDS instances are in the same region
-
 ## Usage
 
 In order to use the script, you need the configuration file for it in your local working directory.
